@@ -203,6 +203,6 @@ miss.glm.fit <- function (x, y,
   beta = beta[c(1,subsets+1)]
   names(beta) <- xnames[c(1,subsets+1)]
   names(std_obs) <- xnames[c(1,subsets+1)]
-  list(coefficients = beta, s.err = std_obs, var.covar = var_obs, ll = ll[1,1], Sig.X = Sigma, mu.X = mu
+  list(coefficients = beta, s.err = std_obs, var.covar = var_obs, ll = ll[1,1], Sig.X = Sigma, mu.X = mu, trace=trace
        )
 }
