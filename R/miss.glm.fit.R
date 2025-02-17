@@ -33,6 +33,8 @@ miss.glm.fit <- function (x, y,
   var_cal = control$var_cal
   ll_obs_cal = control$ll_obs_cal
   subsets = control$subsets
+  
+  trace = list(beta=NULL, mu=NULL, sigma=NULL)
 
   if (!is.na(seed))
     set.seed(seed)
@@ -150,6 +152,11 @@ miss.glm.fit <- function (x, y,
 
       mu <- (1-gamma)*mu + gamma*colMeans(X.sim)
       Sigma <- (1-gamma)*Sigma + gamma*cov(X.sim)
+      
+      trace$beta[[k]] <- beta
+      trace$mu[[k]] <- mu
+      trace$sigma[[k]] <- Sigma
+      
 
       seqbeta[,k]=beta.old
 
