@@ -95,7 +95,7 @@ predict.miss.glm <- function(object, newdata = NULL, seed = NA, method='map', ..
 
     }else if(method=='map'){
       pr2 =rep(0,dim(X.test)[1])
-      mc.size = 2500
+      mc.size = 5000
       X.test = data.matrix(X.test)
       for(i in 1:dim(X.test)[1]){
         x=X.test[i,]
